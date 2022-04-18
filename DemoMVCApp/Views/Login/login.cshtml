@@ -1,0 +1,76 @@
+﻿@using DemoMVCApp.Models
+@model DemoMVCApp.Models.LoginModel
+@{
+    ViewBag.Title = "login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h2 style="color:green;margin-top:60px; text-align:center">
+     Welcome to student Login Page
+    </h2>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <div id="=login-div"style="background-color:lavender;border:2px solid groove";>
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                <table>
+                    <tr>
+                        <td class="form-control-label" style="text-align:right;font-size:larger;font-weight:bold">
+                            @Html.LabelFor(model => model.UserEmail)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.UserEmail, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.ValidationMessageFor(model => model.UserEmail)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-control-label" style="text-align:right;font-size:larger;font-weight:bold">
+                            @Html.LabelFor(model => model.UserPassword)
+                        </td>
+                        <td>
+                            @Html.PasswordFor(model => model.UserPassword, new { @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            @Html.ValidationMessageFor(model => model.UserPassword)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <label id="lbl_AuthError"class="field-Validation-error">@Html.DisplayFor(model=>model.LoginErrorMessage)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <input type="submit" class="btn btn-success"value="Login"name="name"id="submit" />
+                        </td>
+                    </tr>
+                </table>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
+

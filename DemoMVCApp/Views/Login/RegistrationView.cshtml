@@ -1,0 +1,26 @@
+﻿@using DemoMVCApp.Models
+@model DemoMVCApp.Models.LoginModel
+@{
+    ViewBag.Title = "RegistrationView";
+}
+
+<h2>RegistrationView</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(userl => userl.UserName)
+        @Html.TextBoxFor(usert => usert.UserName)
+        
+        <br />
+        @Html.LabelFor(usere => usere.UserEmail)
+        @Html.TextBoxFor(usere => usere.UserEmail)
+        <br />
+        @Html.LabelFor(userp => userp.UserPassword)
+        @Html.TextBoxFor(userp => userp.UserPassword)
+        <br />
+        @Html.LabelFor(userR => userR.Role)
+        @Html.TextBoxFor(userR => userR.Role)<br />
+        <input type="submit"value="Register"id="sub1"name="submit" />
+    }
+</div>
+
